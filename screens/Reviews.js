@@ -8,7 +8,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { GlobalStyles } from "../constents/styles";
 import reviews from "../data/reviews";
 import ReviewItem from "../components/ReviewItem/ReviewItem";
-import Button from "../components/Button/Button";
+import Button from "../UI/Button";
 
 export default function Reviews() {
   return (
@@ -37,7 +37,7 @@ export default function Reviews() {
         renderItem={({ item }) => <ReviewItem review={item} />}
       />
       <View style={styles.plusButton}>
-      <Button >Ashik</Button>
+      <Button style={styles.Button}>+</Button>
       </View>
     </PageLayout>
   );
@@ -78,5 +78,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  
+  Button:{
+    width: 75,
+    height: 75,
+    borderRadius: 37.5,
+    
+  }
 });

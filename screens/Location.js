@@ -8,24 +8,25 @@ import {
 import item from "../data/address"
 import { GlobalStyles } from "../constents/styles";
 import Button from "../UI/Button";
+import CustomText from "../components/CustomText/CustomText";
 
 export default function Address({navigation}) {
   const { width } = useWindowDimensions();
   return (
     <View style={styles.container1}>
-      <Text onPress={() => navigation.navigate("AddAddress")} style={styles.skip}>
+      <CustomText onPress={() => navigation.navigate("AddAddress")} style={styles.skip}>
         NEXT
-      </Text>
+      </CustomText>
       <View style={[styles.container, { width }]}>
         <View style={{ flex: 0.1 }}>
-          <Text style={styles.title}>{item[0].title}</Text>
+          <CustomText style={styles.title}>{item[0].title}</CustomText>
         </View>
         <Image
           source={item[0].image}
           style={[styles.image, { width, resizeMode: "contain" }]}
         />
         <View style={{ flex: 0.1 }}>
-          <Text style={styles.description}>{item[0].description}</Text>
+          <CustomText style={styles.description}>{item[0].description}</CustomText>
         </View>
       </View>
       <Button style={styles.button}>Use Current Location</Button>

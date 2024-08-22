@@ -73,9 +73,9 @@ export default function OTP({ route, navigation }) {
 const styles = StyleSheet.create({
   otpContainer: {
     marginTop: 20,
+    width: "100%",
     flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: 25,
+    gap: 10,
   },
   otpBox: {
     width: 52,

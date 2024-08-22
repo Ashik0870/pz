@@ -32,6 +32,7 @@ import RiderReview from "./screens/RiderReview";
 import WriteAReview from "./screens/WriteAReview";
 import Notification from "./screens/Notification";
 import Reviews from "./screens/Reviews";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -206,6 +207,7 @@ export default function App() {
   return (
     <>
       <Provider store={store}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
         {/* <AppProvider> */}
         <StatusBar style="auto" />
         <NavigationContainer>
@@ -233,6 +235,7 @@ export default function App() {
           </CommonBackground>
         </NavigationContainer>
         {/* </AppProvider> */}
+        </GestureHandlerRootView>
       </Provider>
     </>
   );

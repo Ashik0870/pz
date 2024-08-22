@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, View } from "react-native";
 import SignInLayout from "../components/SignInLayout/SignInLayout";
 import MyTextInput from "../components/MyTextInput/MyTextInput";
 import CustomText from "../components/CustomText/CustomText";
@@ -18,6 +18,11 @@ export default function SingUp({navigation}) {
     <View
       style={{ flex: 1, backgroundColor: GlobalStyles.colors.backgroundColor }}
     >
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 0}
+      >
       <SignInLayout
         type="signUp"
         label="Welcome to Pets"
@@ -51,6 +56,7 @@ export default function SingUp({navigation}) {
           />
         </View>
       </SignInLayout>
+      </KeyboardAvoidingView>
     </View>
   );
 }

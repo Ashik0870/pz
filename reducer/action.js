@@ -36,3 +36,6 @@ export const incrementCount = (itemId) => ({
     type: 'ADD_ITEMS_TO_CART',
     payload: items,
   });
+
+
+  

@@ -9,9 +9,10 @@ export default function ItemCard({children}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginLeft: 20,
+        // marginLeft: 20,
         marginTop: 30,
         flexDirection: "row",
         gap: 12,
+        paddingHorizontal: 20,
       },
 })

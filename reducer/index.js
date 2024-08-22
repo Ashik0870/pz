@@ -85,6 +85,14 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         cartItems: [...state.cartItems.filter(item => !action.payload.find(p => p.id === item.id)), ...updatedCartItems],
       };
+      case 'REMOVE_ITEM_FROM_CART': {
+        const updatedItemCounts = { ...state.itemCounts };
+        delete updatedItemCounts[action.payload];
+        return {
+          ...state,
+          itemCounts: updatedItemCounts,
+        };
+      }
 
     default:
       return state;

@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   Text,
   FlatList,
+  Platform,
 } from "react-native";
 import SearchBar from "../components/SearchBar/SearchBar";
 import BackArrow from "../components/BackArrow/BackArrow";
@@ -79,12 +80,15 @@ export default function StoreList({ navigation }) {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 30,
+    height: 40,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+    marginTop: Platform.OS === 'ios' ? 40 : 30, 
   },
   backButton: {
+    marginTop: 10,
     alignItems: "center",
   },
   sortBy: {
